@@ -40,6 +40,12 @@ namespace Lesson_04_Polymorphism
     {
         static void Main(string[] args)
         {
+            Console.Write("Enter patient's name: ");
+            string patient = Console.ReadLine();
+            Console.Write("Enter patient's Fees: ");
+            float fee = float.Parse(Console.ReadLine());
+            MedicalRecords mObj = new MedicalRecords(patient, fee);
+
         }
     }
 }
