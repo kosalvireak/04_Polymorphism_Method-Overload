@@ -13,19 +13,19 @@ namespace Lesson_04_Polymorphism
         public MedicalRecords(string strPatientName, float fltMedicalFees)
         {
             this.strPatientName = strPatientName; //this.strPatientName keyword <this> indicate that the name is refer private variable 
-            this.fltMedicalFees = fltMedicalFees; 
+            this.fltMedicalFees = fltMedicalFees;
         }
-        public float CelMedicalFees()
+        public float CalMedicalFees()
         {
             return fltMedicalFees;
         }
         public float CalMedicalFees(string test)
         {
-            if (test =="Hapatities")
+            if (test == "Hapatities")
             {
                 fltMedicalFees = fltMedicalFees + 17.7f;
             }
-            else if (test =="Cholesterol")
+            else if (test == "Cholesterol")
             {
                 fltMedicalFees = fltMedicalFees + 25f;
             }
@@ -45,7 +45,9 @@ namespace Lesson_04_Polymorphism
             Console.Write("Enter patient's Fees: ");
             float fee = float.Parse(Console.ReadLine());
             MedicalRecords mObj = new MedicalRecords(patient, fee);
-
+            Console.WriteLine("Medical Fees without test is: " + mObj.CalMedicalFees().ToString());
+            Console.WriteLine("Medical Fees with Hepatities test is: " + mObj.CalMedicalFees("Hapatities").ToString());
+            Console.WriteLine("Medical Fees with Cholesterol test is: " + mObj.CalMedicalFees("Cholesterol").ToString());
         }
     }
 }
